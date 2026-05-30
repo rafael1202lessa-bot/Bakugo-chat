@@ -1,6 +1,6 @@
-streamlit
-google-generativeai
-streamlit-authenticator==0.3,4
+import streamlit as st
+import streamlit_authenticator as stauth
+import google.generativeai as genai
 import time
 
 # IMPORTAÇÃO DO BANCO DE DADOS EXTERNO
@@ -114,4 +114,4 @@ elif autenticado is False:
     st.error('Usuário/Senha incorretos')
 elif autenticado is None:
     st.warning('Efetue o login para acessar a central de personagens. (User: admin | Senha: 123)')
-    
+                             
