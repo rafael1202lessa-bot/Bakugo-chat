@@ -1,6 +1,6 @@
-import streamlit as st
-import streamlit_authenticator as stauth
-import google.generativeai as genai
+streamlit
+google-generativeai
+streamlit-authenticator==0.3.4
 import time
 
 # IMPORTAÇÃO DO BANCO DE DADOS EXTERNO
