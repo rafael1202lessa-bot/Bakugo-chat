@@ -123,7 +123,7 @@ EstadoGerenciador.inicializar_sistema()
 with st.sidebar:
     st.markdown("<h2 style='text-align: center; color: #FFF;'>🤖 HUB DE PERSONAGENS</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; font-size: 0.8rem; color: #888;'>Selecione com quem deseja interagir. Cada chat possui memória independente.</p>", unsafe_allow_html=True)
-    st.hr()
+    st.divider()
     
     # Renderização dos cards dos personagens na barra lateral
     for nome, dados in PERSONAGENS_DB.items():
@@ -132,7 +132,7 @@ with st.sidebar:
             st.session_state.personagem_atual = nome
             st.rerun()
             
-    st.hr()
+    st.divider()
     st.markdown("### ⚙️ CONFIGURAÇÃO DE COGNÇÃO")
     
     # Campo para inserir a chave da API com segurança
