@@ -1,6 +1,6 @@
 streamlit
 google-generativeai
-streamlit-authenticator==0.3.4
+streamlit-authenticator==0.3,4
 import time
 
 # IMPORTAÇÃO DO BANCO DE DADOS EXTERNO
