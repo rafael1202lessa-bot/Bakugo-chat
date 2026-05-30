@@ -6,16 +6,25 @@ import time
 # IMPORTAÇÃO DO BANCO DE DADOS EXTERNO
 from personagens import PERSONAGENS_DB
 
-# Configurações iniciais do login
-config = {
-    "credentials": {
-        "usernames": {
-            "admin": {"email": "adm@email.com", "name": "Admin", "password": "123"}
+# Configurações iniciais do login simplificado
+credentials = {
+    "usernames": {
+        "admin": {
+            "email": "adm@email.com",
+            "name": "Admin",
+            "password": "123"  # O sistema processará o texto plano diretamente nesta versão
         }
-    },
-    "cookie": {"expiry_days": 30, "key": "poly_secret_key", "name": "poly_cookie"}
+    }
 }
 
+authenticator = stauth.Authenticate(
+    credentials,
+    "poly_cookie",
+    "poly_secret_key",
+    cookie_expiry_days=30
+)
+
+autenticado, username, name = authenticator.login(location='main', fields={'Form name': 'Acessar Hub de RPG'})
 stauth.Hasher.hash_passwords(config['credentials'])
 authenticator = stauth.Authenticate(config['credentials'], config['cookie']['name'], config['cookie']['key'], config['cookie']['expiry_days'])
 
