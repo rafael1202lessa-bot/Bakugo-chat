@@ -271,7 +271,7 @@ if pergunta_usuario := st.chat_input(f"Envie uma mensagem para {p_nome}..."):
                 historico_formatado_ia.append({"role": role_convertida, "parts": [msg["content"]]})
             
             # Execução do modelo omitindo a última pergunta do histórico para evitar duplicação sintática
-            chat_session = model.start_chat(history=historflow_ia = historico_formatado_ia[:-1])
+            chat_session = model.start_chat(history=historico_formatado_ia[:-1])
             resposta_ia = chat_session.send_message(pergunta_usuario)
             resposta_final = resposta_ia.text
             
